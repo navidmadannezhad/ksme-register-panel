@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import EducationalField, EducationalLevel, ExtraWords, NationalNumber, StudentNumber, PhoneNumber, Birthday, Activities, Skills
+from .models import EducationalField, EducationalLevel, ExtraWords, NationalNumber, StudentNumber, PhoneNumber, Birthday, Activities, Skills, CorporateField, Activity
 
 admin.site.register(EducationalField)
 admin.site.register(EducationalLevel)
@@ -10,3 +10,5 @@ admin.site.register(PhoneNumber)
 admin.site.register(Birthday)
 admin.site.register(Activities)
 admin.site.register(Skills)
+admin.site.register(CorporateField)
+admin.site.register(Activity)

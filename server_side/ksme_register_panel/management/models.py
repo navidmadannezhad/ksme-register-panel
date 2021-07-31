@@ -45,3 +45,13 @@ class Activities(models.Model):
 class Birthday(models.Model): 
     birthday = models.CharField(blank=True, max_length=20)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="birthday")
+
+
+class CorporateField(models.Model):
+    corporate_field = models.CharField(blank=True, max_length=20)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="corporate_field")    
+
+
+class Activity(models.Model):
+    activity = models.BooleanField(default=False)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="activity") 
