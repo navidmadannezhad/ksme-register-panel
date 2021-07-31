@@ -1,0 +1,42 @@
+div.level3{
+
+    div.form{
+        width: 100%;
+        div{
+            margin-top: 10px;
+        }
+        textarea{
+            @include input();
+            width: 100%;
+        }
+        textarea{
+            height:100px;
+        }
+
+        div.corp_field{
+            p.intro{
+                font-size: $font2;
+                color: white;
+            }
+            div.option{
+                font-size: $font1;
+                color: white;
+                @include flex-row-start-center();
+                label{
+                    padding-right: 5px;
+                }
+            }
+        }
+
+        button.next_level{
+            @include input();
+            background-color: $yellow;
+            color: $heavyDark;
+            font-size: $font2;
+            width: 100%;
+        }
+    }
+}
+
+
+

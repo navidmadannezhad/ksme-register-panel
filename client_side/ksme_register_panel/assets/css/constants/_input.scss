@@ -1,0 +1,15 @@
+@mixin input{
+    border: none;
+    border-radius: 5px;
+    background-color: $heavyDark;
+    color: white;
+    padding: 10px;
+    font-family: 'myFont';
+    &::placeholder{
+        color: $placeholderColor;
+        font-size: $font1;
+    }
+    &:focus{
+        outline:none;
+    }
+}

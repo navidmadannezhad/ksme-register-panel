@@ -1,0 +1,804 @@
+@font-face {
+  font-family: 'myFont';
+  font-style: normal;
+  font-weight: normal;
+  src: url("assets/fonts/eot/IRANSansWeb.eot");
+  src: url("assets/fonts/woff2/IRANSansWeb.woff2") format("woff2"), url("assets/fonts/woff/IRANSansWeb.woff") format("woff"), url("assets/fonts/ttf/IRANSansWeb.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'myFont';
+  font-style: normal;
+  font-weight: 900;
+  src: url("assets/fonts/eot/IRANSansWeb_Black.eot");
+  src: url("assets/fonts/woff2/IRANSansWeb_Black.woff2") format("woff2"), url("assets/fonts/woff/IRANSansWeb_Black.woff") format("woff"), url("assets/fonts/ttf/IRANSansWeb_Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'myFont';
+  font-style: normal;
+  font-weight: bold;
+  src: url("assets/fonts/eot/IRANSansWeb_Bold.eot");
+  src: url("assets/fonts/woff2/IRANSansWeb_Bold.woff2") format("woff2"), url("assets/fonts/woff/IRANSansWeb_Bold.woff") format("woff"), url("assets/fonts/ttf/IRANSansWeb_Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'myFont';
+  font-style: normal;
+  font-weight: 500;
+  src: url("assets/fonts/eot/IRANSansWeb_Medium.eot");
+  src: url("assets/fonts/woff2/IRANSansWeb_Medium.woff2") format("woff2"), url("assets/fonts/woff/IRANSansWeb_Medium.woff") format("woff"), url("assets/fonts/ttf/IRANSansWeb_Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'myFont';
+  font-style: normal;
+  font-weight: 300;
+  src: url("assets/fonts/eot/IRANSansWeb_Light.eot");
+  src: url("assets/fonts/woff2/IRANSansWeb_Light.woff2") format("woff2"), url("assets/fonts/woff/IRANSansWeb_Light.woff") format("woff"), url("assets/fonts/ttf/IRANSansWeb_Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'myFont';
+  font-style: normal;
+  font-weight: 200;
+  src: url("assets/fonts/eot/IRANSansWeb_UltraLight.eot");
+  src: url("assets/fonts/woff2/IRANSansWeb_UltraLight.woff2") format("woff2"), url("assets/fonts/woff/IRANSansWeb_UltraLight.woff") format("woff"), url("assets/fonts/ttf/IRANSansWeb_UltraLight.ttf") format("truetype");
+}
+
+html {
+  font-size: 18px;
+  font-family: 'myFont';
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(18px + 4 * ((100vw - 320px) / 1180));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+div.level1 div.form {
+  width: 100%;
+}
+
+div.level1 div.form div {
+  margin-top: 10px;
+}
+
+div.level1 div.form input {
+  border: none;
+  border-radius: 5px;
+  background-color: #1b1b1b;
+  color: white;
+  padding: 10px;
+  font-family: 'myFont';
+  width: 100%;
+}
+
+div.level1 div.form input::-webkit-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level1 div.form input:-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level1 div.form input::-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level1 div.form input::placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level1 div.form input:focus {
+  outline: none;
+}
+
+div.level1 div.form div.birthday {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.level1 div.form div.birthday input {
+  width: 80%;
+}
+
+div.level1 div.form div.birthday p.intro {
+  color: white;
+  font-size: 0.7rem;
+  color: white;
+}
+
+div.level1 div.form button.next_level {
+  border: none;
+  border-radius: 5px;
+  background-color: #1b1b1b;
+  color: white;
+  padding: 10px;
+  font-family: 'myFont';
+  background-color: #fff85c;
+  color: #1b1b1b;
+  font-size: 0.7rem;
+  width: 100%;
+}
+
+div.level1 div.form button.next_level::-webkit-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level1 div.form button.next_level:-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level1 div.form button.next_level::-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level1 div.form button.next_level::placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level1 div.form button.next_level:focus {
+  outline: none;
+}
+
+div.level2 div.form {
+  width: 100%;
+}
+
+div.level2 div.form div {
+  margin-top: 10px;
+}
+
+div.level2 div.form input, div.level2 div.form textarea, div.level2 div.form select {
+  border: none;
+  border-radius: 5px;
+  background-color: #1b1b1b;
+  color: white;
+  padding: 10px;
+  font-family: 'myFont';
+  width: 100%;
+}
+
+div.level2 div.form input::-webkit-input-placeholder, div.level2 div.form textarea::-webkit-input-placeholder, div.level2 div.form select::-webkit-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level2 div.form input:-ms-input-placeholder, div.level2 div.form textarea:-ms-input-placeholder, div.level2 div.form select:-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level2 div.form input::-ms-input-placeholder, div.level2 div.form textarea::-ms-input-placeholder, div.level2 div.form select::-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level2 div.form input::placeholder, div.level2 div.form textarea::placeholder, div.level2 div.form select::placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level2 div.form input:focus, div.level2 div.form textarea:focus, div.level2 div.form select:focus {
+  outline: none;
+}
+
+div.level2 div.form textarea {
+  height: 100px;
+}
+
+div.level2 div.form select {
+  width: 60%;
+}
+
+div.level2 div.form div.maghta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.level2 div.form div.maghta input {
+  width: 80%;
+}
+
+div.level2 div.form div.maghta p.intro {
+  color: white;
+  font-size: 0.7rem;
+  color: white;
+}
+
+div.level2 div.form button.next_level {
+  border: none;
+  border-radius: 5px;
+  background-color: #1b1b1b;
+  color: white;
+  padding: 10px;
+  font-family: 'myFont';
+  background-color: #fff85c;
+  color: #1b1b1b;
+  font-size: 0.7rem;
+  width: 100%;
+}
+
+div.level2 div.form button.next_level::-webkit-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level2 div.form button.next_level:-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level2 div.form button.next_level::-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level2 div.form button.next_level::placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level2 div.form button.next_level:focus {
+  outline: none;
+}
+
+div.level3 div.form {
+  width: 100%;
+}
+
+div.level3 div.form div {
+  margin-top: 10px;
+}
+
+div.level3 div.form textarea {
+  border: none;
+  border-radius: 5px;
+  background-color: #1b1b1b;
+  color: white;
+  padding: 10px;
+  font-family: 'myFont';
+  width: 100%;
+}
+
+div.level3 div.form textarea::-webkit-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level3 div.form textarea:-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level3 div.form textarea::-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level3 div.form textarea::placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level3 div.form textarea:focus {
+  outline: none;
+}
+
+div.level3 div.form textarea {
+  height: 100px;
+}
+
+div.level3 div.form div.corp_field p.intro {
+  font-size: 0.7rem;
+  color: white;
+}
+
+div.level3 div.form div.corp_field div.option {
+  font-size: 0.5rem;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.level3 div.form div.corp_field div.option label {
+  padding-right: 5px;
+}
+
+div.level3 div.form button.next_level {
+  border: none;
+  border-radius: 5px;
+  background-color: #1b1b1b;
+  color: white;
+  padding: 10px;
+  font-family: 'myFont';
+  background-color: #fff85c;
+  color: #1b1b1b;
+  font-size: 0.7rem;
+  width: 100%;
+}
+
+div.level3 div.form button.next_level::-webkit-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level3 div.form button.next_level:-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level3 div.form button.next_level::-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level3 div.form button.next_level::placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level3 div.form button.next_level:focus {
+  outline: none;
+}
+
+div.level4 div.form div.message {
+  color: white;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+div.level4 div.form div.next_level a {
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: #1b1b1b;
+  color: white;
+  padding: 10px;
+  font-family: 'myFont';
+  background-color: #fff85c;
+  color: #1b1b1b;
+  font-size: 0.7rem;
+  width: 100%;
+}
+
+div.level4 div.form div.next_level a::-webkit-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level4 div.form div.next_level a:-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level4 div.form div.next_level a::-ms-input-placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level4 div.form div.next_level a::placeholder {
+  color: #9b9b9b;
+  font-size: 0.5rem;
+}
+
+div.level4 div.form div.next_level a:focus {
+  outline: none;
+}
+
+.page-enter-active {
+  -webkit-animation: acrossIn .45s ease-out both;
+          animation: acrossIn .45s ease-out both;
+}
+
+.page-leave-active {
+  -webkit-animation: acrossOut .65s ease-in both;
+          animation: acrossOut .65s ease-in both;
+}
+
+@-webkit-keyframes acrossIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes acrossIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes acrossOut {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes acrossOut {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loader-stroke-rotate {
+  animation: loader-stroke 1s infinite linear alternate-reverse;
+}
+
+@-webkit-keyframes loader-stroke {
+  from {
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: 200;
+  }
+}
+
+@keyframes loader-stroke {
+  from {
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: 200;
+  }
+}
+
+.svg-rotate {
+  -webkit-animation: svg-rotate 2s infinite linear;
+          animation: svg-rotate 2s infinite linear;
+}
+
+@-webkit-keyframes svg-rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes svg-rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.loader-level1 {
+  stroke-dashoffset: 236;
+}
+
+.loader-level2 {
+  stroke-dashoffset: 150;
+}
+
+.loader-level3 {
+  stroke-dashoffset: 70;
+}
+
+.loader-level4 {
+  stroke-dashoffset: 0;
+}
+
+#__nuxt, #__layout {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.level-message {
+  color: white;
+}
+
+div.level-message i {
+  color: #fff85c;
+  font-size: 4rem;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  direction: rtl;
+}
+
+* html, * body {
+  min-height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 1200px) {
+  * html, * body {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url("static/wallpaper.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("static/wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  * html div.panel, * body div.panel {
+    background-color: #262626;
+    height: auto;
+    width: 60%;
+    padding: 80px;
+    border-radius: 20px;
+    -webkit-transition: max-height 0.5s;
+    transition: max-height 0.5s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  * html div.panel div.form-section, * body div.panel div.form-section {
+    width: 45%;
+  }
+  * html div.panel div.loader-section, * body div.panel div.loader-section {
+    width: 50%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  * html div.panel div.loader-section div.loader, * body div.panel div.loader-section div.loader {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  * html div.panel div.loader-section div.loader svg, * body div.panel div.loader-section div.loader svg {
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotate(90deg) scale(1, -1);
+            transform: rotate(90deg) scale(1, -1);
+  }
+  * html div.panel div.loader-section div.loader svg path#loader-itself, * body div.panel div.loader-section div.loader svg path#loader-itself {
+    stroke-dasharray: 236;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  * html div.panel div.loader-section div.loader div.status, * body div.panel div.loader-section div.loader div.status {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  * html div.panel div.loader-section div.loader div.status div.level-message, * body div.panel div.loader-section div.loader div.status div.level-message {
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  div.panel {
+    background-color: #262626;
+    min-height: 100vh;
+    width: 100%;
+    padding: 60px 0px;
+    border-radius: 0px;
+    -webkit-transition: max-height 0.5s;
+    transition: max-height 0.5s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  div.panel div.form-section {
+    width: 55%;
+    margin-top: 30px;
+  }
+  div.panel div.loader-section {
+    width: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  div.panel div.loader-section div.loader {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  div.panel div.loader-section div.loader svg {
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotate(90deg) scale(1, -1);
+            transform: rotate(90deg) scale(1, -1);
+  }
+  div.panel div.loader-section div.loader svg path#loader-itself {
+    stroke-dasharray: 236;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+  }
+  div.panel div.loader-section div.loader div.status {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  div.panel div.loader {
+    width: 245px;
+    height: 245px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  div.panel div.form-section {
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  div.panel div.form-section {
+    width: 90%;
+  }
+  div.panel div.loader-section {
+    width: 60%;
+  }
+}
+/*# sourceMappingURL=main.css.map */

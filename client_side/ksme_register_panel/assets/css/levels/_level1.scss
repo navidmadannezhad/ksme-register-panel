@@ -1,0 +1,31 @@
+div.level1{
+
+    div.form{
+        width: 100%;
+        div{
+            margin-top: 10px;
+        }
+        input{
+            @include input();
+            width: 100%;
+        }
+        div.birthday{
+            @include flex-row-between-center();
+            input{
+                width: 80%;
+            }
+            p.intro{
+                color: white;
+                font-size: $font2;
+                color: white;
+            }
+        }
+        button.next_level{
+            @include input();
+            background-color: $yellow;
+            color: $heavyDark;
+            font-size: $font2;
+            width: 100%;
+        }
+    }
+}

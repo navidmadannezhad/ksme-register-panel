@@ -1,0 +1,175 @@
+// import contants
+@import 'constants/colors';
+@import 'constants/fonts';
+@import 'constants/flex';
+@import 'constants/input';
+
+// import levels
+@import 'levels/level1';
+@import 'levels/level2';
+@import 'levels/level3';
+@import 'levels/level4';
+
+@import 'levels/animations';
+
+// normalizing the fucking nuxt js "why the fuck can't u be a normal framework"
+#__nuxt, #__layout{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+div.level-message{
+    color:white;
+    i{
+        color: $yellow;
+        font-size: 4rem;
+    }
+}
+
+// Codes for heights above 1200px
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    direction: rtl;
+    html, body{
+        min-height: 100vh;
+        width: 100%;
+        @include flex-center-center();
+    }
+}
+@media only screen and (min-width: 1200px){
+    *{
+        html, body{
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('static/wallpaper.jpg');
+            background-size: cover;
+            background-position: center;
+    
+            div.panel{
+                background-color: $lightDark;
+                height: auto;
+                width: 60%;
+                padding: 80px;
+                border-radius: 20px;
+                transition: max-height 0.5s;
+                @include flex-row-between-center();
+    
+                div.form-section{
+                    width: 45%;
+                }
+    
+                div.loader-section{
+                    width: 50%;
+                    height: 100%;
+                    @include flex-center-center();
+
+                    div.loader{
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        svg{
+                            width: 100%;
+                            height: 100%;
+                            transform: rotate(90deg) scale(1,-1);
+
+                            path#loader-itself{
+                                stroke-dasharray: 236;
+                                transition: all 1s;
+                            }
+                        }
+                        div.status{
+                            width:100%;
+                            height: 100%;
+                            @include flex-center-center();
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            div.level-message{
+                                color:white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// Responsive codes
+@media only screen and (max-width: 1200px){
+    div.panel{
+        background-color: $lightDark;
+        min-height: 100vh;
+        width: 100%;
+        padding: 60px 0px;
+        border-radius: 0px;
+        transition: max-height 0.5s;
+        @include flex-column-reverse-center();
+        justify-content: flex-end;
+
+        div.form-section{
+            width: 55%;
+            margin-top: 30px;
+        }
+
+        div.loader-section{
+            width: 30%;
+            @include flex-center-center();
+
+            div.loader{
+                width: 100%;
+                height: 100%;
+                position: relative;
+                svg{
+                    width: 100%;
+                    height: 100%;
+                    transform: rotate(90deg) scale(1,-1);
+
+                    path#loader-itself{
+                        stroke-dasharray: 236;
+                        transition: all 1s;
+                        transition-timing-function: ease-in-out;
+                    }
+                }
+                div.status{
+                    width:100%;
+                    height: 100%;
+                    @include flex-center-center();
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+
+        div.loader{
+            width:245px;
+            height: 245px;
+            border-radius: 20px;
+            box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+        }
+    }
+}
+
+@media only screen and (max-width:900px){
+    div.panel{
+        div.form-section{
+            width:65%;
+        }
+    }
+}
+
+@media only screen and (max-width:550px){
+    div.panel{
+        div.form-section{
+            width:90%;
+        }
+        div.loader-section{
+            width: 60%;
+        }
+    }
+}

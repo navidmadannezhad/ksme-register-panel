@@ -1,0 +1,72 @@
+.page-enter-active {
+    animation: acrossIn .45s ease-out both; // vaghti mire chap -- new route comes
+  } 
+  
+  .page-leave-active {
+    animation: acrossOut .65s ease-in both; // vaghti mire rast -- old route leaves
+  } 
+  
+  @keyframes acrossIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes acrossOut {
+    0% {
+      opacity: 1;
+    }
+    40%{
+        opacity: 0.5;
+    }
+    60%{
+        opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  // loader animations --
+  .loader-stroke-rotate{ // must be given to path
+    animation: loader-stroke 1s infinite linear alternate-reverse;
+  }
+  @keyframes loader-stroke{
+    from{
+      stroke-dashoffset: 20;
+    }
+    to{
+      stroke-dashoffset: 200;
+    }
+  }
+
+  .svg-rotate{ // must be given to svg
+    animation: svg-rotate 2s infinite linear;
+  }
+  @keyframes svg-rotate {
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+  }
+
+  .loader-level1{
+    stroke-dashoffset: 236;
+  }
+
+  .loader-level2{
+    stroke-dashoffset: 150;
+  }
+
+  .loader-level3{
+    stroke-dashoffset: 70;
+  }
+
+  .loader-level4{
+    stroke-dashoffset: 0;
+  }

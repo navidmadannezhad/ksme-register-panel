@@ -1,0 +1,22 @@
+div.level4{
+
+    div.form{
+        div.message{
+            color: white;
+            font-size: $font2;
+            text-align: center;
+        }
+
+        div.next_level a{
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            @include input();
+            background-color: $yellow;
+            color: $heavyDark;
+            font-size: $font2;
+            width: 100%;
+        }
+    }
+}
