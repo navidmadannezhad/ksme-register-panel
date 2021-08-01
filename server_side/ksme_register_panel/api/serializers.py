@@ -93,7 +93,7 @@ class Level3Serializer(Level):
             educational_field= validated_data['educational_field'],
             user= user
         )
-        phone_number.save()
+        educational_field.save()
 
         educational_level = EducationalLevel.objects.create(
             educational_level= validated_data['educational_level'],
@@ -131,7 +131,7 @@ class Level3Serializer(Level):
         )
         corporate_field.save()
 
-        activity = PhoneNumber.objects.create(
+        activity = Activity.objects.create(
             user= user
         )
         activity.save()
