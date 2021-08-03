@@ -8,18 +8,18 @@ class UserSerializer(serializers.Serializer):
         fields = '__all__'
 
 class Level(serializers.Serializer):
-    first_name = serializers.CharField(error_messages = {'blank': 'ﺩیﻥک ﺩﺭاﻭ اﺭ ﺩﻮﺧ ﻡﺎﻧ ﺎﻔﻄﻟ'})
-    last_name = serializers.CharField(error_messages = {'blank': 'ﺩیﻥک ﺩﺭاﻭ اﺭ ﺩﻮﺧ یگﺩاﻮﻧﺎﺧ ﻡﺎﻧ ﺎﻔﻄﻟ'})
-    email = serializers.EmailField(error_messages = {'blank': 'Please enter your email'})
-    birthday = serializers.CharField(error_messages = {'blank': 'ﺩیﻥک ﺩﺭاﻭ اﺭ ﺪﻟﻮﺗ ﺥیﺭﺎﺗ ﺎﻔﻄﻟ'})
-    national_number = serializers.CharField(error_messages = {'blank': 'ﺩیﻥک ﺩﺭاﻭ اﺭ یﻞﻣ ﺩک ﺎﻔﻄﻟ'})
-    phone_number = serializers.CharField(error_messages = {'blank': 'ﺩیﻥک ﺩﺭاﻭ اﺭ ﺩﻮﺧ ﻦﻔﻠﺗ ﻩﺭﺎﻤﺷ ﺎﻔﻄﻟ'})
-    educational_field = serializers.CharField(error_messages = {'blank': 'Please enter educational field'})
-    educational_level = serializers.CharField(error_messages = {'blank': 'Please enter educational level'})
-    student_number = serializers.CharField(error_messages ={'blank': 'Please enter student number'} )
+    first_name = serializers.CharField(error_messages = {'blank': 'لطفا نام خود را وارد کنید'})
+    last_name = serializers.CharField(error_messages = {'blank': 'لطفا نام خانوادگی خود را وارد کنید'})
+    email = serializers.EmailField(error_messages = {'blank': 'لطفا ایمیل خود را وارد کنید'})
+    birthday = serializers.CharField(error_messages = {'blank': 'لطفا تاریخ تولد خود را وارد کنید'})
+    national_number = serializers.CharField(error_messages = {'blank': 'لطفا نام کد ملی یا شماره شناسنامه را وارد کنید'})
+    phone_number = serializers.CharField(error_messages = {'blank': 'لطفا شماره تلفن همراه خود را وارد کنید'})
+    educational_field = serializers.CharField(error_messages = {'blank': 'لطفا نام رشته را وارد کنید'})
+    educational_level = serializers.CharField(error_messages = {'blank': 'لطفا مقطع تحصیلی خود را وارد کنید'})
+    student_number = serializers.CharField(error_messages = {'blank': 'لطفا شماره دانشجویی را وارد کنید'})
     skills = serializers.CharField(allow_blank=True)
     activities = serializers.CharField(allow_blank=True)
-    corporate_field = serializers.CharField(error_messages={'blank': 'Please at least enter one corporation Field'})
+    corporate_field = serializers.CharField(error_messages = {'blank': 'لطفا نام حوزه مورد نظر جهت همکاری را وارد کنید'})
     extra_words = serializers.CharField(allow_blank=True)
 
 

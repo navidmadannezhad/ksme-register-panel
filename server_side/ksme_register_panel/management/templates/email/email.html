@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>احراز هویت</title>
+</head>
+<body>
+    <h1>
+        احراز هویت ثبت نام انجمن علمی مهندسی مکانیک
+    </h1>
+
+    <p>
+        سلام
+        <span>{{ first_name }}</span><span>{{ last_name }}</span>!
+    </p>
+
+    <p>
+        جهت تکمیل فرآیند ثبت نام در انجمن علمی مهندسی مکانیک، لطفا با کلیک کردن بر دکمه زیر، حساب کاربری خود را تایید نمایید.
+    </p>
+
+    <a href="http://{{ domain }}{% url 'activate' uidb64=uid token=token %}">تایید حساب کاربری</a>
+</body>
+</html>

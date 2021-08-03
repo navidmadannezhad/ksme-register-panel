@@ -12,3 +12,7 @@ def isEnglish(value):
             return True
         else:
             return False
+
+
+def verificationToken():
+    pass
