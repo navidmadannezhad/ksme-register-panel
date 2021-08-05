@@ -8,19 +8,19 @@ class UserSerializer(serializers.Serializer):
         fields = '__all__'
 
 class Level(serializers.Serializer):
-    first_name = serializers.CharField(error_messages = {'blank': 'لطفا نام خود را وارد کنید'})
-    last_name = serializers.CharField(error_messages = {'blank': 'لطفا نام خانوادگی خود را وارد کنید'})
-    email = serializers.EmailField(error_messages = {'blank': 'لطفا ایمیل خود را وارد کنید'})
-    birthday = serializers.CharField(error_messages = {'blank': 'لطفا تاریخ تولد خود را وارد کنید'})
-    national_number = serializers.CharField(error_messages = {'blank': 'لطفا نام کد ملی یا شماره شناسنامه را وارد کنید'})
-    phone_number = serializers.CharField(error_messages = {'blank': 'لطفا شماره تلفن همراه خود را وارد کنید'})
-    educational_field = serializers.CharField(error_messages = {'blank': 'لطفا نام رشته را وارد کنید'})
-    educational_level = serializers.CharField(error_messages = {'blank': 'لطفا مقطع تحصیلی خود را وارد کنید'})
-    student_number = serializers.CharField(error_messages = {'blank': 'لطفا شماره دانشجویی را وارد کنید'})
-    skills = serializers.CharField(allow_blank=True)
-    activities = serializers.CharField(allow_blank=True)
-    corporate_field = serializers.CharField(error_messages = {'blank': 'لطفا نام حوزه مورد نظر جهت همکاری را وارد کنید'})
-    extra_words = serializers.CharField(allow_blank=True)
+    first_name = serializers.CharField(error_messages = {'blank': 'لطفا نام خود را وارد کنید'}, required=False)
+    last_name = serializers.CharField(error_messages = {'blank': 'لطفا نام خانوادگی خود را وارد کنید'}, required=False)
+    email = serializers.EmailField(error_messages = {'blank': 'لطفا ایمیل خود را وارد کنید'}, required=False)
+    birthday = serializers.CharField(error_messages = {'blank': 'لطفا تاریخ تولد خود را وارد کنید'}, required=False)
+    national_number = serializers.CharField(error_messages = {'blank': 'لطفا کد ملی یا شماره شناسنامه را وارد کنید'}, required=False)
+    phone_number = serializers.CharField(error_messages = {'blank': 'لطفا شماره تلفن همراه خود را وارد کنید'}, required=False)
+    educational_field = serializers.CharField(error_messages = {'blank': 'لطفا نام رشته را وارد کنید'}, required=False)
+    educational_level = serializers.CharField(error_messages = {'blank': 'لطفا مقطع تحصیلی خود را وارد کنید'}, required=False)
+    student_number = serializers.CharField(error_messages = {'blank': 'لطفا شماره دانشجویی را وارد کنید'}, required=False)
+    skills = serializers.CharField(allow_blank=True, required=False)
+    activities = serializers.CharField(allow_blank=True, required=False)
+    corporate_field = serializers.CharField(error_messages = {'blank': 'لطفا نام حوزه مورد نظر جهت همکاری را وارد کنید'}, required=False)
+    extra_words = serializers.CharField(allow_blank=True, required=False)
 
 
 
@@ -29,22 +29,22 @@ class Level1Serializer(Level):
     def validate_phone_number(self, value):
         value = str(value)
         if value.isnumeric() is False:
-            raise serializers.ValidationError('ﺩیﻥک ﺩﺭاﻭ یﺖﺳﺭﺩ ﻪﺑ اﺭ ﺩﻮﺧ ﻦﻔﻠﺗ ﻩﺭﺎﻤﺷ')
+            raise serializers.ValidationError('لطفا شماره تلفن خود را صحیح وارد کنید')
         return value
 
     
     def validate_national_number(self, value):
         value = str(value)
         if str(value).isnumeric() is False:
-            raise serializers.ValidationError('ﺪﺷﺎﺑ ﺩاﺪﻋا ﻞﻣﺎﺷ ﺪﻧاﻮﺗیﻡ ﺎﻬﻨﺗ یﻞﻣ ﺩک')
+            raise serializers.ValidationError('لطفا کد ملی یا شماره شناسنامه خود را صحیح وارد کنید')
         return value
 
     def validate(self, data):
         if isEnglish(data['first_name']):
-            raise serializers.ValidationError('ﺩییﺎﻤﻧ ﺩﺭاﻭ یﺱﺭﺎﻓ ﻪﺑ اﺭ ﺩﻮﺧ ﻡﺎﻧ ﺎﻔﻄﻟ')
+            raise serializers.ValidationError('لطفا نام خود را به فارسی بنویسید')
 
         elif isEnglish(data['last_name']):
-            raise serializers.ValidationError('ﺩییﺎﻤﻧ ﺩﺭاﻭ یﺱﺭﺎﻓ ﻪﺑ اﺭ ﺩﻮﺧ یگﺩاﻮﻧﺎﺧ ﻡﺎﻧ ﺎﻔﻄﻟ')
+            raise serializers.ValidationError('لطفا نام خانوادگی خود را به فارسی بنویسید')
         
         return data
 
