@@ -11,8 +11,13 @@ div.level1{
         }
         div.birthday{
             @include flex-row-between-center();
-            input{
-                width: 80%;
+            div.vpd-header, .vpd-day-effect{
+                background-color: $lightDark !important;
+            }
+            span.vpd-input-group{
+                label{
+                    background-color: $heavyDark !important;
+                }
             }
             p.intro{
                 color: white;

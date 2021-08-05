@@ -88,13 +88,8 @@ export default{
       LevelIsLocked(num){
         //return eval(`this.$store.state.level${num}Lock`); 
         return eval(`this.$store.state.level${num}Lock`);
-      },
+      }
 
-
-    },
-
-    computed:{
-      
     },
 
     mounted(){

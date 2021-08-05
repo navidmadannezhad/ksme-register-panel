@@ -121,8 +121,12 @@ div.level1 div.form div.birthday {
           align-items: center;
 }
 
-div.level1 div.form div.birthday input {
-  width: 80%;
+div.level1 div.form div.birthday div.vpd-header, div.level1 div.form div.birthday .vpd-day-effect {
+  background-color: #262626 !important;
+}
+
+div.level1 div.form div.birthday span.vpd-input-group label {
+  background-color: #1b1b1b !important;
 }
 
 div.level1 div.form div.birthday p.intro {

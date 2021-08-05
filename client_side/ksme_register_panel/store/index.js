@@ -15,11 +15,11 @@ export const mutations = {
 
 export const actions = {
 
-    validateLevel(num, data, context){
+    validateLevel(context, args){
         return axios({
-            url: `http://127.0.0.1:8000/api/level${num}`,
+            url: `http://127.0.0.1:8000/api/level${args.level}/`,
             method: 'post',
-            data: data,
+            data: args.data,
         })
     }
 

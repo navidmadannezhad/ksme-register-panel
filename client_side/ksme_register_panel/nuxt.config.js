@@ -20,16 +20,6 @@ export default {
     script: [
         {
           type: 'text/javascript',
-          src: 'js/jquery.js',
-          body: true
-        },
-        {
-            type: 'text/javascript',
-            src: 'js/persianDatepicker.min.js',
-            body: true
-        },
-        {
-          type: 'text/javascript',
           src: 'https://kit.fontawesome.com/7b0dcc43a4.js',
           body: true
         }
@@ -39,7 +29,6 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/css/main.css',
-    '~/assets/css/datepicker/persianDatepicker-default.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

@@ -9,7 +9,7 @@
             </div>
             <div class="birthday">
                 <p class="intro">تاریخ تولد</p>
-                <input type="text" id="datepicker" v-model="birthday">
+                <date-picker id="date-picker" v-model="birthday"></date-picker>
             </div>
             <div class="national_number">
                 <input type="text" placeholder="کد ملی/ شماره شناسنامه" v-model="national_number">
@@ -22,7 +22,8 @@
             </div>
 
             <div class="next_level">
-                <NuxtLink class="next_level" tag="button" to='/level2'>مرحله بعد</NuxtLink>
+                <button class="next_level" @click="validateLevel1">مرحله بعد</button>
+                <!-- <NuxtLink class="next_level" tag="button" to='/level2'>مرحله بعد</NuxtLink> -->
             </div>
         </div>
     </div>
@@ -30,10 +31,15 @@
 
 
 <script>
+import VuePersianDatetimePicker from 'vue-persian-datetime-picker'
 export default {
-    
+    components: {
+        datePicker: VuePersianDatetimePicker
+    },
+
     data(){
         return{
+            birthday: '',
             first_name:'',
             last_name:'',
             birthday: '',
@@ -55,20 +61,24 @@ export default {
 
             }
 
-            this.$store.dispatch.validateLevel(1, data)
+            let args = {
+                level: 1,
+                data: data
+            }
+
+            this.$store.dispatch('validateLevel', args)
             .then(response => {
-                this.$store.commit('openLockOfLevel', 2);
+                console.log(response.data);
+                //this.$store.commit('openLockOfLevel', 2);
             })
             .catch(err => {
-                console.log(err.response.response);
+                console.log(err.response.data);
             });
         }
     },
 
     mounted(){
-        $(function() {
-            $("#datepicker").persianDatepicker();       
-        })
+   
     }
 
 }
