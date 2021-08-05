@@ -79,43 +79,51 @@ export default{
         })
       },
 
-      goToLevel(num){
-        this.$refs.levelMessage.innerHTML = eval(`this.level${num}`).message;
-        this.removeLoaderClasses();
-        this.$refs.loaderPath.classList.add(eval(`this.level${num}`).class);
+      goToLevel(num, nextRoute){
+          this.$refs.levelMessage.innerHTML = eval(`this.level${num}`).message;
+          this.removeLoaderClasses();
+          this.$refs.loaderPath.classList.add(eval(`this.level${num}`).class);   
+      },
+
+      LevelIsLocked(num){
+        //return eval(`this.$store.state.level${num}Lock`); 
+        return eval(`this.$store.state.level${num}Lock`);
       },
 
 
     },
 
+    computed:{
+      
+    },
+
     mounted(){
         this.$router.push({path: 'level1'});
-        this.goToLevel(1);
+        this.goToLevel(1); 
 
-        this.$router.beforeEach((from, to, next) => {
-          switch(from.path){
+        
+
+        this.$router.beforeEach((to, from, next) => {
+      
+          switch(to.path){
 
             case '/level1':
-              console.log('1');
-              this.goToLevel(1);
+              this.LevelIsLocked(1) ? next(false) : next(this.goToLevel(1));
               break;
 
             case '/level2':
-              console.log('2');
-              this.goToLevel(2);
+              this.LevelIsLocked(2) ? next(false) : next(this.goToLevel(2));
               break;
 
             case '/level3':
-              console.log('3');
-              this.goToLevel(3);
+              this.LevelIsLocked(3) ? next(false) : next(this.goToLevel(3));
               break;
 
             case '/level4':
-              console.log('4');
-              this.goToLevel(4);
+              this.LevelIsLocked(4) ? next(false) : next(this.goToLevel(4));
               break;
           }
-          next();
+
         })
 
     }

@@ -2,10 +2,10 @@
     <div class="level1">
         <div class="form">
             <div class="name">
-                <input type="text" v-model="name" placeholder="نام و نام خانوادگی">
+                <input type="text" v-model="first_name" placeholder="نام">
             </div>
             <div class="fathers_name">
-                <input type="text" v-model="fathers_name" placeholder="نام پدر">
+                <input type="text" v-model="last_name" placeholder="نام خانوادگی">
             </div>
             <div class="birthday">
                 <p class="intro">تاریخ تولد</p>
@@ -34,12 +34,34 @@ export default {
     
     data(){
         return{
-            name: '',
-            fathers_name: '',
+            first_name:'',
+            last_name:'',
             birthday: '',
             national_number: '',
             phone_number: '',
             email: ''
+        }
+    },
+
+    methods:{
+        validateLevel1(){
+            let data = {
+                first_name: this.first_name,
+                last_name: this.last_name,
+                birthday: this.birthday,
+                national_number: this.national_number,
+                phone_number: this.phone_number,
+                email: this.email
+
+            }
+
+            this.$store.dispatch.validateLevel(1, data)
+            .then(response => {
+                this.$store.commit('openLockOfLevel', 2);
+            })
+            .catch(err => {
+                console.log(err.response.response);
+            });
         }
     },
 
