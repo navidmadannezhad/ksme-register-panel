@@ -42,7 +42,6 @@ export default {
             birthday: '',
             first_name:'',
             last_name:'',
-            birthday: '',
             national_number: '',
             phone_number: '',
             email: ''
@@ -51,35 +50,38 @@ export default {
 
     methods:{
         validateLevel1(){
-            let data = {
-                first_name: this.first_name,
-                last_name: this.last_name,
-                birthday: this.birthday,
-                national_number: this.national_number,
-                phone_number: this.phone_number,
-                email: this.email
+            this.changeLoadingState();
 
-            }
+            this.pushToVuexState('birthday', this.birthday);
+            this.pushToVuexState('first_name', this.first_name);
+            this.pushToVuexState('last_name', this.last_name);
+            this.pushToVuexState('national_number', this.national_number);
+            this.pushToVuexState('phone_number', this.phone_number);
+            this.pushToVuexState('email', this.email);
 
-            let args = {
-                level: 1,
-                data: data
-            }
-
-            this.$store.dispatch('validateLevel', args)
+            this.$store.dispatch('validateLevel1')
             .then(response => {
                 console.log(response.data);
-                //this.$store.commit('openLockOfLevel', 2);
+                this.$store.commit('openLockOfLevel', { num: 2 });
+                this.$router.push({'path': 'level2'});
             })
             .catch(err => {
                 console.log(err.response.data);
-            });
+            }).finally(() => {
+                this.changeLoadingState();
+            })
+        },
+
+
+        changeLoadingState(){
+            this.$store.commit('changeLoadingState');
+        },
+
+
+        pushToVuexState(paramName, newValue){
+            this.$store.commit('renewParameter', { paramName, newValue });
         }
     },
-
-    mounted(){
-   
-    }
 
 }
 </script>

@@ -1,44 +1,24 @@
 <template>
     <div class="panel">
 
-            <div class="form-section">
-                <Nuxt></Nuxt>
-            </div>
-
+        <div class="form-section">
+            <Nuxt></Nuxt>
+        </div>
 
         <div class="loader-section">
-                <div class="loader">
-
-                  <svg viewBox="0 0 100 100" ref="svg">
-                    <path ref="loaderPath" id="loader-itself" class="loader-level2" d="
-                      M 37, 25
-                      m -25, 25
-                      a 32.5,32.5 0 1,0 75,0
-                      a 32.5,32.5 0 1,0 -75,0
-                  " fill="none" stroke-width="5" stroke="#FFF85C"/>
-                    <path id="loader-background" d="
-                      M 37, 25
-                      m -25, 25
-                      a 32.5,32.5 0 1,0 75,0
-                      a 32.5,32.5 0 1,0 -75,0
-                  " fill="none" stroke-width="5" stroke="rgba(0,0,0,0.3)"/>
-
-                  </svg>
-
-                  <div class="status">
-                 
-                      <div class="level-message" ref="levelMessage">اطلاعات اولیه</div>
-               
-                  </div>
-
-            </div>
+            <loader-component></loader-component>
         </div>
 
     </div>
 </template>
 
 <script>
+import loaderComponentVue from '../components/loaderComponent.vue';
 export default{
+    components:{
+      'loader-component': loaderComponentVue
+    },
+
     data(){
       return{
         level1: {
@@ -56,47 +36,54 @@ export default{
         level4:{
           message: '<i class="fas fa-check"></i>',
           class: 'loader-level4'
-        } 
+        },
       }
     },
 
     methods:{
       addLoader(){
-        this.$refs.loaderPath.classList.add('loader-stroke-rotate');
-        this.$refs.svg.classList.add('svg-rotate');
+        document.querySelector('#loader-itself').classList.add('loader-stroke-rotate');
+        document.querySelector('.svg').classList.add('svg-rotate');
       },
       
       removeLoader(){
-        this.$refs.loaderPath.classList.remove('loader-stroke-rotate');
-        this.$refs.svg.classList.remove('svg-rotate');
+        document.querySelector('#loader-itself').classList.remove('loader-stroke-rotate');
+        document.querySelector('.svg').classList.remove('svg-rotate');
       },
 
       removeLoaderClasses(){
-        console.log('removed');
-        let loaderPathClasses = this.$refs.loaderPath.classList;
+        let loaderPathClasses = document.querySelector('#loader-itself').classList;
         loaderPathClasses.forEach(className => {
           loaderPathClasses.remove(className);
         })
       },
 
       goToLevel(num, nextRoute){
-          this.$refs.levelMessage.innerHTML = eval(`this.level${num}`).message;
+          document.querySelector('.level-message').innerHTML = eval(`this.level${num}`).message;
           this.removeLoaderClasses();
-          this.$refs.loaderPath.classList.add(eval(`this.level${num}`).class);   
+          document.querySelector('#loader-itself').classList.add(eval(`this.level${num}`).class);   
       },
 
       LevelIsLocked(num){
         //return eval(`this.$store.state.level${num}Lock`); 
         return eval(`this.$store.state.level${num}Lock`);
+      },
+
+      changeLoadingState(){
+        this.$store.commit('changeLoadingState');
       }
 
+    },
+
+    computed:{
+      isLoading(){
+        return this.$store.state.isLoading;
+      }
     },
 
     mounted(){
         this.$router.push({path: 'level1'});
         this.goToLevel(1); 
-
-        
 
         this.$router.beforeEach((to, from, next) => {
       
@@ -121,7 +108,7 @@ export default{
 
         })
 
-    }
+    },
 }
 </script>
 

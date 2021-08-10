@@ -1,4 +1,9 @@
 export default {
+  env:{
+    level1_url: 'http://127.0.0.1:8000/api/level1/',
+    level2_url: 'http://127.0.0.1:8000/api/level2/',
+    level3_url: 'http://127.0.0.1:8000/api/level3/',
+  },
   router:{
     //base: '/navid/'
   },

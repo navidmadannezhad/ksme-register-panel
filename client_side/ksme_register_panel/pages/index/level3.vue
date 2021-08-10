@@ -6,7 +6,7 @@
                 <p class="intro">تمایل به همکاری در حوزه:</p>
                 <div class="options">
                     <div class="option">
-                        <input type="checkbox" id="content" name="content" value="content" v-model="content">
+                        <input type="checkbox" id="content" name="content" value="content" v-model="tolidMohtava">
                         <label for="content">تولید محتوا</label>
                     </div>
                     <div class="option">
@@ -17,11 +17,12 @@
             </div>
 
             <div class="experience">
-                <textarea type="text" placeholder="سخن دیگه ای؟ :)" v-model="extra_saying"></textarea>
+                <textarea type="text" placeholder="سخن دیگه ای؟ :)" v-model="extra_words"></textarea>
             </div>
 
             <div class="next_level">
-                <NuxtLink class="next_level" tag="button" to='/level4'>تکمیل فرآیند ثبت نام</NuxtLink>
+                <button class="next_level" @click="validateLevel3">تکمیل فرآیند ثبت نام</button>
+                <!-- <NuxtLink class="next_level" tag="button" to='/level4'>تکمیل فرآیند ثبت نام</NuxtLink> -->
             </div>
         </div>
     </div>
@@ -32,9 +33,43 @@
 export default {
     data(){
         return{
-            content: '',
-            journal: '',
-            extra_saying: ''
+            tolidMohtava: false,
+            journal: false,
+            extra_words: ''
+        }
+    },
+    methods:{
+        validateLevel3(){
+            this.changeLoadingState();
+
+            this.pushToVuexState('extra_words', this.extra_words);
+            this.pushToVuexState('corporate_field', this.corporate_field);
+
+            this.$store.dispatch('validateLevel3')
+            .then(response => {
+                console.log(response.data);
+                this.$store.commit('openLockOfLevel', { num: 4 });
+                this.$router.push({'path': 'level4'});
+            })
+            .catch(err => {
+                console.log(err.response.data);
+            }).finally(() => {
+                this.changeLoadingState();
+            })
+        },
+
+        changeLoadingState(){
+            this.$store.commit('changeLoadingState');
+        },
+
+        pushToVuexState(paramName, newValue){
+            this.$store.commit('renewParameter', { paramName, newValue });
+        }
+    },
+
+    computed:{
+        corporate_field(){
+            return `${this.tolidMohtava ? 'تولید محتوا': ''}, ${this.journal ? 'مقاله نویسی': ''} `;
         }
     }
 }
