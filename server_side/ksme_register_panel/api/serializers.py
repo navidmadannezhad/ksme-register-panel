@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .additional.additional import isEnglish
 from django.contrib.auth.models import User
+from rest_framework.validators import UniqueValidator
 from management.models import PhoneNumber, EducationalLevel, EducationalField, Skills, ExtraWords, StudentNumber, NationalNumber, Activities, Birthday, CorporateField, Activity
 
 class UserSerializer(serializers.Serializer):
@@ -8,9 +9,9 @@ class UserSerializer(serializers.Serializer):
         fields = '__all__'
 
 class Level(serializers.Serializer):
-    first_name = serializers.CharField(error_messages = {'blank': 'لطفا نام خود را وارد کنید'}, required=False)
+    first_name = serializers.CharField(error_messages = {'blank': 'لطفا نام خود را وارد کنید'}, required=False, allow_null=True)
     last_name = serializers.CharField(error_messages = {'blank': 'لطفا نام خانوادگی خود را وارد کنید'}, required=False)
-    email = serializers.EmailField(error_messages = {'blank': 'لطفا ایمیل خود را وارد کنید'}, required=False)
+    email = serializers.EmailField(error_messages = {'blank': 'لطفا ایمیل خود را وارد کنید'},validators=[UniqueValidator(queryset=User.objects.all(), message="ایمیل مورد نظر قبلا ثبت شده است")] ,required=False)
     birthday = serializers.CharField(error_messages = {'blank': 'لطفا تاریخ تولد خود را وارد کنید'}, required=False)
     national_number = serializers.CharField(error_messages = {'blank': 'لطفا کد ملی یا شماره شناسنامه را وارد کنید'}, required=False)
     phone_number = serializers.CharField(error_messages = {'blank': 'لطفا شماره تلفن همراه خود را وارد کنید'}, required=False)

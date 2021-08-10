@@ -5,6 +5,7 @@ from management.models import Activity
 from .tokenViews import emailVerificationArguments
 from django.utils.http import urlsafe_base64_decode
 from django.contrib.auth.tokens import default_token_generator
+from django.shortcuts import render
 
 # email imports
 from django.core.mail import EmailMultiAlternatives
@@ -101,10 +102,12 @@ class Activate(APIView):
 
         if user is not None and default_token_generator.check_token(user, token):
             activity = Activity.objects.get(user=user)
-            activity.activity = True
-            activity.save()
-            return Response('حساب کاربری شما با موفقیت احراز هویت شد')
+            if activity.activity is not True:
+                activity.activity = True
+                activity.save()
+                return render(request, 'management/email_success.html')
+            else:
+                return render(request, 'management/email_fail.html')
         else:
-            ser_user = UserSerializer(user)
-            return Response('لینک احراز هویت غیر فعال است.')
+            return render(request, 'management/email_fail.html')
 
