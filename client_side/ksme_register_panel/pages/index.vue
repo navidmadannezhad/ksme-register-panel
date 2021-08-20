@@ -9,14 +9,18 @@
             <loader-component></loader-component>
         </div>
 
+        <error-component :errors="errors"></error-component>
+
     </div>
 </template>
 
 <script>
+import errorComponentVue from '../components/errorComponent.vue';
 import loaderComponentVue from '../components/loaderComponent.vue';
 export default{
     components:{
-      'loader-component': loaderComponentVue
+      'loader-component': loaderComponentVue,
+      'error-component': errorComponentVue
     },
 
     data(){
@@ -37,6 +41,8 @@ export default{
           message: '<i class="fas fa-check"></i>',
           class: 'loader-level4'
         },
+
+        errors: {}
       }
     },
 
@@ -71,7 +77,7 @@ export default{
 
       changeLoadingState(){
         this.$store.commit('changeLoadingState');
-      }
+      },
 
     },
 
@@ -109,9 +115,15 @@ export default{
         })
 
     },
+
+    
+    created () {
+        this.$nuxt.$on('update-errors', (e) => {
+            this.errors = e;
+        })
+    }
 }
 </script>
 
 <style lang="scss" scoped>
-
 </style>

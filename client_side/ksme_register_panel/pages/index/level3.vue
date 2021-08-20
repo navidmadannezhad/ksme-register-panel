@@ -52,7 +52,7 @@ export default {
                 this.$router.push({'path': 'level4'});
             })
             .catch(err => {
-                console.log(err.response.data);
+                this.updateErrorsInParent(err.response.data)
             }).finally(() => {
                 this.changeLoadingState();
             })
@@ -64,6 +64,10 @@ export default {
 
         pushToVuexState(paramName, newValue){
             this.$store.commit('renewParameter', { paramName, newValue });
+        },
+
+        updateErrorsInParent(data){
+            this.$nuxt.$emit('update-errors', data);
         }
     },
 

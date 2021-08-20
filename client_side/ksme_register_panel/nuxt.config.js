@@ -53,6 +53,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/style-resources',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -67,5 +68,14 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  styleResources: {
+      scss: [
+          '~/assets/css/constants/_fonts.scss',
+          '~/assets/css/constants/_flex.scss',
+          '~/assets/css/constants/_colors.scss',
+          '~/assets/css/constants/_input.scss',
+      ]
   }
 }

@@ -609,6 +609,7 @@ div.level-message i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-x: hidden;
 }
 
 @media only screen and (min-width: 1200px) {

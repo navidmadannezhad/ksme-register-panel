@@ -44,7 +44,7 @@ export default {
             last_name:'',
             national_number: '',
             phone_number: '',
-            email: ''
+            email: '',
         }
     },
 
@@ -66,20 +66,22 @@ export default {
                 this.$router.push({'path': 'level2'});
             })
             .catch(err => {
-                console.log(err.response.data);
+                this.updateErrorsInParent(err.response.data);
             }).finally(() => {
                 this.changeLoadingState();
             })
         },
 
-
         changeLoadingState(){
             this.$store.commit('changeLoadingState');
         },
 
-
         pushToVuexState(paramName, newValue){
             this.$store.commit('renewParameter', { paramName, newValue });
+        },
+
+        updateErrorsInParent(data){
+            this.$nuxt.$emit('update-errors', data);
         }
     },
 
