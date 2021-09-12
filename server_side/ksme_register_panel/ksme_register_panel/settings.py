@@ -143,7 +143,6 @@ EMAIL_HOST_PASSWORD = 'ksme574rhf'
 # All auth settings ---------------------
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 CORS_ALLOWED_ORIGINS = [

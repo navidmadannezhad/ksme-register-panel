@@ -565,6 +565,24 @@ div.level4 div.form div.next_level a:focus {
   stroke-dashoffset: 0;
 }
 
+@-webkit-keyframes loading {
+  from {
+    text-shadow: 0px 1px 3px #fff85c;
+  }
+  to {
+    text-shadow: 0px 1px 20px #fff85c;
+  }
+}
+
+@keyframes loading {
+  from {
+    text-shadow: 0px 1px 3px #fff85c;
+  }
+  to {
+    text-shadow: 0px 1px 20px #fff85c;
+  }
+}
+
 div.landing-panel {
   background-color: #262626;
   color: white;
@@ -737,6 +755,11 @@ div.level-message {
 div.level-message i {
   color: #fff85c;
   font-size: 4rem;
+}
+
+div.level-message p.loading {
+  color: #fff85c;
+  animation: loading 0.3s infinite alternate-reverse linear;
 }
 
 * {

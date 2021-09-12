@@ -19,8 +19,8 @@
         <div class="status">
         
             <div class="level-message">
-                <p v-if="!isLoading">اطلاعات اولیه</p>
-                <p v-else>منتظر بمانید</p>
+                <p class="msg" v-if="!isLoading">اطلاعات اولیه</p>
+                <p class="loading" v-else>منتظر بمانید</p>
             </div>
     
         </div>
@@ -39,7 +39,8 @@ export default {
         isLoading(){
             return this.$store.state.isLoading;
         }
-    }
+    },
+
 }
 </script>
 

@@ -7,8 +7,8 @@
             </p>
 
             <div class="buttons">
-                <a href="https://t.me/KiauKsme">ارتباط با ما</a>
                 <NuxtLink to="register">ثبت نام</NuxtLink>
+                <a href="https://t.me/KiauKsme">ارتباط با ما</a>
             </div>
         </div>
         

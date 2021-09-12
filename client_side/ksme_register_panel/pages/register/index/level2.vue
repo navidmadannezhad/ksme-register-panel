@@ -57,14 +57,20 @@ export default {
 
             this.$store.dispatch('validateLevel2')
             .then(response => {
+                this.changeLoadingState();
                 this.$store.commit('openLockOfLevel', { num: 3 });
                 this.$router.push({'path': 'level3'});
             })
             .catch(err => {
-                this.updateErrorsInParent(err.response.data);
-            }).finally(() => {
+                let error;
+                if(!err.response){
+                    error = {0: ['مشکل در اتصال به اینترنت']}
+                }else{
+                    error = err.response.data;
+                }
                 this.changeLoadingState();
-            })
+                this.updateErrorsInParent(error);
+            });
         },
 
         changeLoadingState(){

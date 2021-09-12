@@ -2,7 +2,7 @@
     <div class="panel">
 
         <div class="form-section">
-            <Nuxt></Nuxt>
+            <NuxtChild></NuxtChild>
         </div>
 
         <div class="loader-section">
@@ -65,13 +65,12 @@ export default{
       },
 
       goToLevel(num, nextRoute){
-          document.querySelector('.level-message p').innerHTML = eval(`this.level${num}`).message;
+          document.querySelector('.level-message p.msg').innerHTML = eval(`this.level${num}`).message;
           this.removeLoaderClasses();
           document.querySelector('#loader-itself').classList.add(eval(`this.level${num}`).class);   
       },
 
       LevelIsLocked(num){
-        //return eval(`this.$store.state.level${num}Lock`); 
         return eval(`this.$store.state.level${num}Lock`);
       },
 
@@ -95,19 +94,19 @@ export default{
       
           switch(to.path){
 
-            case '/level1':
+            case '/register/level1':
               this.LevelIsLocked(1) ? next(false) : next(this.goToLevel(1));
               break;
 
-            case '/level2':
+            case '/register/level2':
               this.LevelIsLocked(2) ? next(false) : next(this.goToLevel(2));
               break;
 
-            case '/level3':
+            case '/register/level3':
               this.LevelIsLocked(3) ? next(false) : next(this.goToLevel(3));
               break;
 
-            case '/level4':
+            case '/register/level4':
               this.LevelIsLocked(4) ? next(false) : next(this.goToLevel(4));
               break;
           }

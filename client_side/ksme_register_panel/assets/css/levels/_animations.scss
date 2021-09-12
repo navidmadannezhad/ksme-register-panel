@@ -70,3 +70,14 @@
   .loader-level4{
     stroke-dashoffset: 0;
   }
+
+
+
+  @keyframes loading{
+    from{
+      text-shadow: 0px 1px 3px $yellow;
+    }
+    to{
+      text-shadow: 0px 1px 20px $yellow;
+    }
+  }

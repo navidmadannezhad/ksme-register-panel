@@ -8,4 +8,5 @@ urlpatterns = [
     path('level2/', Level2.as_view()),
     path('level3/', Level3.as_view()),
     path('activate/<uidb64>/<token>/', Activate.as_view(), name='activate'),
+    # path('test/', Test.as_view())
 ]

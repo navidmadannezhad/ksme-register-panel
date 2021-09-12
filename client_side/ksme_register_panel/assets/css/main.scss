@@ -27,6 +27,11 @@ div.level-message{
         color: $yellow;
         font-size: 4rem;
     }
+
+    p.loading{
+        color: $yellow;
+        animation: loading 0.3s infinite alternate-reverse linear;
+    }
 }
 
 // Codes for heights above 1200px
@@ -121,7 +126,6 @@ div.level-message{
         }
     }
 }
-
 
 
 // Responsive codes
