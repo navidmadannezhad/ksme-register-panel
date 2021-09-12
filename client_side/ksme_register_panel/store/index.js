@@ -33,7 +33,6 @@ export const mutations = {
     },
 
     changeLoadingState(state){
-        console.log('change loading state is working!');
         state.isLoading = !state.isLoading;
     }
 }

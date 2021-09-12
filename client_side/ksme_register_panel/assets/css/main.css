@@ -565,6 +565,160 @@ div.level4 div.form div.next_level a:focus {
   stroke-dashoffset: 0;
 }
 
+div.landing-panel {
+  background-color: #262626;
+  color: white;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+}
+
+div.landing-panel div.content {
+  width: 90%;
+}
+
+div.landing-panel div.content p.intro {
+  font-size: 0.7rem;
+  padding: 20px 0px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+div.landing-panel div.content div.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+div.landing-panel div.content div.buttons a {
+  text-decoration: none;
+  color: black;
+  margin: 20px 0px;
+  font-size: 0.7rem;
+  display: inline-block;
+  padding: 20px 0px;
+  border-radius: 10px;
+  width: 48%;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: rgba(255, 248, 92, 0.7);
+}
+
+div.landing-panel div.content div.buttons a:hover {
+  background-color: #fff85c;
+}
+
+@media only screen and (max-width: 1200px) {
+  div.landing-panel {
+    background-color: #262626;
+    border-radius: 0px;
+    width: 100% !important;
+    min-height: 100vh;
+    height: auto;
+  }
+  div.landing-panel div.content {
+    width: 50%;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  div.landing-panel div.content p.intro {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 90%;
+  }
+  div.landing-panel div.content div.buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 90%;
+  }
+  div.landing-panel div.content div.buttons a {
+    text-decoration: none;
+    color: black;
+    margin: 20px 0px;
+    font-size: 0.7rem;
+    display: inline-block;
+    padding: 20px 0px;
+    border-radius: 10px;
+    width: 48%;
+    text-align: center;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    background-color: rgba(255, 248, 92, 0.7);
+  }
+  div.landing-panel div.content div.buttons a:hover {
+    background-color: #fff85c;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  div.landing-panel div.content {
+    width: 80%;
+  }
+  div.landing-panel div.content div.buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  div.landing-panel div.content div.buttons a {
+    text-decoration: none;
+    color: black;
+    margin: 0px;
+    margin-top: 20px;
+    font-size: 0.7rem;
+    display: inline-block;
+    padding: 20px 0px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    background-color: rgba(255, 248, 92, 0.7);
+  }
+  div.landing-panel div.content div.buttons a:hover {
+    background-color: #fff85c;
+  }
+}
+
 #__nuxt, #__layout {
   width: 100%;
   height: 100%;
@@ -640,6 +794,7 @@ div.level-message i {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    position: relative;
   }
   * html div.panel div.form-section, * body div.panel div.form-section {
     width: 45%;
@@ -697,7 +852,28 @@ div.level-message i {
     left: 0;
     top: 0;
   }
-  * html div.panel div.loader-section div.loader div.status div.level-message, * body div.panel div.loader-section div.loader div.status div.level-message {
+  * html div.panel div.loader-section div.loader div.status div.level-message p, * body div.panel div.loader-section div.loader div.status div.level-message p {
+    color: white;
+  }
+  * html div.panel div.contact, * body div.panel div.contact {
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-size: 0.7rem;
+    color: white;
+  }
+  * html div.panel div.contact span, * body div.panel div.contact span {
+    padding: 0px 20px;
+  }
+  * html div.panel div.contact a, * body div.panel div.contact a {
+    text-decoration: none;
     color: white;
   }
 }
@@ -706,6 +882,7 @@ div.level-message i {
   div.panel {
     background-color: #262626;
     min-height: 100vh;
+    height: auto;
     width: 100%;
     padding: 60px 0px;
     border-radius: 0px;
@@ -724,6 +901,7 @@ div.level-message i {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    position: relative;
   }
   div.panel div.form-section {
     width: 55%;
@@ -789,6 +967,31 @@ div.level-message i {
     border-radius: 20px;
     -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
             box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  }
+  div.panel div.contact {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 0.7rem;
+    color: white;
+  }
+  div.panel div.contact span {
+    padding: 0px 20px;
+  }
+  div.panel div.contact a {
+    text-decoration: none;
+    color: white;
   }
 }
 

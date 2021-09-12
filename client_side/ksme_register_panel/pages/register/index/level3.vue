@@ -47,7 +47,6 @@ export default {
 
             this.$store.dispatch('validateLevel3')
             .then(response => {
-                console.log(response.data);
                 this.$store.commit('openLockOfLevel', { num: 4 });
                 this.$router.push({'path': 'level4'});
             })

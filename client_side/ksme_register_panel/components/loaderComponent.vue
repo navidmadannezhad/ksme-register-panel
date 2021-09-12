@@ -18,7 +18,10 @@
 
         <div class="status">
         
-            <div class="level-message">اطلاعات اولیه</div>
+            <div class="level-message">
+                <p v-if="!isLoading">اطلاعات اولیه</p>
+                <p v-else>منتظر بمانید</p>
+            </div>
     
         </div>
     </div>
@@ -30,7 +33,13 @@ export default {
         'loaderState',
         'loaderMessage',
         'loaderBarAmount'
-    ]
+    ],
+
+    computed:{
+        isLoading(){
+            return this.$store.state.isLoading;
+        }
+    }
 }
 </script>
 
