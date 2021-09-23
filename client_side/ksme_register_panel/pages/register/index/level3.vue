@@ -57,6 +57,7 @@ export default {
                     error = {0: ['مشکل در اتصال به اینترنت']}
                 }else{
                     error = err.response.data;
+                    console.log(err.response);
                 }
                 this.changeLoadingState();
                 this.updateErrorsInParent(error);

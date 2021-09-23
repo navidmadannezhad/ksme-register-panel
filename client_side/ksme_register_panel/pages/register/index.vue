@@ -6,7 +6,7 @@
         </div>
 
         <div class="loader-section">
-            <loader-component></loader-component>
+            <loader-component :loaderMessage="loaderState.message"></loader-component>
         </div>
 
         <error-component :errors="errors"></error-component>
@@ -83,6 +83,27 @@ export default{
     computed:{
       isLoading(){
         return this.$store.state.isLoading;
+      },
+
+      loaderState(){
+        switch(this.$route.path){
+
+            case '/register/level1':
+              return this.level1;
+              break;
+
+            case '/register/level2':
+              return this.level2;
+              break;
+
+            case '/register/level3':
+              return this.level3;
+              break;
+
+            case '/register/level4':
+              return this.level4;
+              break;
+          }
       }
     },
 

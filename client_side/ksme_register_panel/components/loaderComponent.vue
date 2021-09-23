@@ -19,8 +19,8 @@
         <div class="status">
         
             <div class="level-message">
-                <p class="msg" v-if="!isLoading">اطلاعات اولیه</p>
-                <p class="loading" v-else>منتظر بمانید</p>
+                <p class="msg" v-if="!isLoading" key="initial">{{ loaderMessage }}</p>
+                <p class="loading" key="loading" v-else>منتظر بمانید</p>
             </div>
     
         </div>
