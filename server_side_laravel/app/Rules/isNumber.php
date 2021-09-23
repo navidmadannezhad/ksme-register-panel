@@ -28,6 +28,7 @@ class isNumber implements Rule
         return is_numeric($value);
     }
 
+
     /**
      * Get the validation error message.
      *
@@ -35,6 +36,6 @@ class isNumber implements Rule
      */
     public function message()
     {
-        return 'Value is not a number!';
+        return 'لطفا :attribute خود را به عدد وارد کنید';
     }
 }

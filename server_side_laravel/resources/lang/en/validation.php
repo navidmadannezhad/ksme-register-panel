@@ -153,6 +153,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'first_name' => 'نام',
+        'last_name' => 'نام خانوادگی',
+        'student_number' => 'نام',
+        'national_number' => 'کد ملی',
+        'phone_number' => 'شماره تلفن',
+    ],
 
 ];

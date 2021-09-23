@@ -18,11 +18,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('api/test', 'UserController@test');
 
-Route::group(['prefix' => 'api'], function(){
-    Route::post('level1', 'UserController@level1');
-    Route::post('level2', 'UserController@level2');
-    Route::post('level3', 'UserController@level3');
-    Route::get('activate/{uidb64}/{token}', 'UserController@activate');
-});
+Route::get('test', 'UserController@test');
+Route::post('level1', 'UserController@level1');
+Route::post('level2', 'UserController@level2');
+Route::post('level3', 'UserController@level3');
+Route::get('activate/{uidb64}/{token}', 'UserController@activate');
+// Route::group(['prefix' => 'api'], function(){
+//     Route::post('level1', 'UserController@level1');
+//     Route::post('level2', 'UserController@level2');
+//     Route::post('level3', 'UserController@level3');
+//     Route::get('activate/{uidb64}/{token}', 'UserController@activate');
+// });

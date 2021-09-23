@@ -26,14 +26,15 @@ class isPersian implements Rule
     public function passes($attribute, $value)
     {
         if(!preg_match("/^[آ ا ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ه ی]/", $value)){
-            echo 'false';
+            return false;
         }else{
             if (preg_match('/[A-Za-z0-9]/', $value)){
-                echo 'false';
+                return false;
             }else{
-                echo 'true';
+                return true;
             }
         }
+        return $value;
     }
 
     /**
@@ -43,6 +44,6 @@ class isPersian implements Rule
      */
     public function message()
     {
-        return 'Value must be persian!';
+        return 'لطفا :attribute خود را به فارسی وارد کنید';
     }
 }
