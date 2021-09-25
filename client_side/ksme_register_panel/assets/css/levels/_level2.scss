@@ -32,6 +32,9 @@ div.level2{
             color: $heavyDark;
             font-size: $font2;
             width: 100%;
+            cursor: pointer;
+
+            transition: all 0.3;
         }
     }
 }

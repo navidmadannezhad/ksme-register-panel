@@ -21,7 +21,7 @@
             </div>
 
             <div class="next_level">
-                <button class="next_level" @click="validateLevel3">تکمیل فرآیند ثبت نام</button>
+                <button class="next_level" @click="validateLevel3" ref="btn">تکمیل فرآیند ثبت نام</button>
                 <!-- <NuxtLink class="next_level" tag="button" to='/level4'>تکمیل فرآیند ثبت نام</NuxtLink> -->
             </div>
         </div>
@@ -41,15 +41,19 @@ export default {
     methods:{
         validateLevel3(){
             this.changeLoadingState();
+            this.disableBtn();
 
-            this.pushToVuexState('extra_words', this.extra_words);
-            this.pushToVuexState('corporate_field', this.corporate_field);
+            localStorage.setItem('corporate_field', this.corporate_field);
+            localStorage.setItem('extra_words', this.extra_words);
 
             this.$store.dispatch('validateLevel3')
             .then(response => {
                 this.changeLoadingState();
                 this.$store.commit('openLockOfLevel', { num: 4 });
                 this.$router.push({'path': 'level4'});
+
+                // for security reasons --
+                this.$store.dispatch('deleteLocalStorageItems');
             })
             .catch(err => {
                 let error;
@@ -61,6 +65,7 @@ export default {
                 }
                 this.changeLoadingState();
                 this.updateErrorsInParent(error);
+                this.enableBtn();
             });
         },
 
@@ -68,19 +73,38 @@ export default {
             this.$store.commit('changeLoadingState');
         },
 
-        pushToVuexState(paramName, newValue){
-            this.$store.commit('renewParameter', { paramName, newValue });
-        },
-
         updateErrorsInParent(data){
             this.$nuxt.$emit('update-errors', data);
+        },
+
+        disableBtn(){
+            this.$refs.btn.disabled = true;
+            this.$refs.btn.classList.add('btn-disabled');
+        },
+
+        enableBtn(){
+            this.$refs.btn.disabled = false;
+            this.$refs.btn.classList.remove('btn-disabled');
         }
     },
 
     computed:{
         corporate_field(){
             return `${this.tolidMohtava ? 'تولید محتوا': ''}, ${this.journal ? 'مقاله نویسی': ''} `;
-        }
+        },
+        stored_extra_words(){
+            return localStorage.getItem('extra_words') ? localStorage.getItem('extra_words') : '';
+        },
+    },
+
+    mounted(){
+        this.extra_words = this.stored_extra_words;
     }
 }
 </script>
+
+<style scoped>
+.btn-disabled{
+    background-color: #ccc64a !important;
+}
+</style>

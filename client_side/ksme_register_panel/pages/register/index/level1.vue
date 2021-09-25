@@ -52,12 +52,12 @@ export default {
         validateLevel1(){
             this.changeLoadingState();
 
-            this.pushToVuexState('birthday', this.birthday);
-            this.pushToVuexState('first_name', this.first_name);
-            this.pushToVuexState('last_name', this.last_name);
-            this.pushToVuexState('national_number', this.national_number);
-            this.pushToVuexState('phone_number', this.phone_number);
-            this.pushToVuexState('email', this.email);
+            localStorage.setItem('birthday', this.birthday);
+            localStorage.setItem('first_name', this.first_name);
+            localStorage.setItem('last_name', this.last_name);
+            localStorage.setItem('national_number', this.national_number);
+            localStorage.setItem('phone_number', this.phone_number);
+            localStorage.setItem('email', this.email);
 
             this.$store.dispatch('validateLevel1')
             .then(response => {
@@ -81,14 +81,40 @@ export default {
             this.$store.commit('changeLoadingState');
         },
 
-        pushToVuexState(paramName, newValue){
-            this.$store.commit('renewParameter', { paramName, newValue });
-        },
-
         updateErrorsInParent(data){
             this.$nuxt.$emit('update-errors', data);
         }
     },
+
+    computed:{
+        stored_birthday(){
+            return localStorage.getItem('birthday') ? localStorage.getItem('birthday') : '';
+        },
+        stored_first_name(){
+            return localStorage.getItem('first_name') ? localStorage.getItem('first_name') : '';
+        },
+        stored_last_name(){
+            return localStorage.getItem('last_name') ? localStorage.getItem('last_name') : '';
+        },
+        stored_national_number(){
+            return localStorage.getItem('national_number') ? localStorage.getItem('national_number') : '';
+        },
+        stored_phone_number(){
+            return localStorage.getItem('phone_number') ? localStorage.getItem('phone_number') : '';
+        },
+        stored_email(){
+            return localStorage.getItem('email') ? localStorage.getItem('email') : '';
+        }
+    },
+
+    mounted(){
+        this.birthday = this.stored_birthday;
+        this.first_name = this.stored_first_name;
+        this.last_name = this.stored_last_name;
+        this.national_number = this.stored_national_number;
+        this.phone_number = this.stored_phone_number;
+        this.email = this.stored_email;
+    }
 
 }
 </script>

@@ -49,11 +49,16 @@ export default {
         validateLevel2(){
             this.changeLoadingState();
 
-            this.pushToVuexState('educational_field', this.educational_field);
-            this.pushToVuexState('educational_level', this.educational_level);
-            this.pushToVuexState('student_number', this.student_number);
-            this.pushToVuexState('skills', this.skills);
-            this.pushToVuexState('activities', this.activities);
+            localStorage.setItem('educational_field', this.educational_field);
+            localStorage.setItem('educational_level', this.educational_level);
+            localStorage.setItem('student_number', this.student_number);
+            localStorage.setItem('skills', this.skills);
+            localStorage.setItem('activities', this.activities);
+            // this.pushToVuexState('educational_field', this.educational_field);
+            // this.pushToVuexState('educational_level', this.educational_level);
+            // this.pushToVuexState('student_number', this.student_number);
+            // this.pushToVuexState('skills', this.skills);
+            // this.pushToVuexState('activities', this.activities);
 
             this.$store.dispatch('validateLevel2')
             .then(response => {
@@ -77,13 +82,39 @@ export default {
             this.$store.commit('changeLoadingState');
         },
 
-        pushToVuexState(paramName, newValue){
-            this.$store.commit('renewParameter', { paramName, newValue });
-        },
+        // pushToVuexState(paramName, newValue){
+        //     this.$store.commit('renewParameter', { paramName, newValue });
+        // },
 
         updateErrorsInParent(data){
             this.$nuxt.$emit('update-errors', data);
         }
+    },
+
+    computed:{
+        stored_educational_field(){
+            return localStorage.getItem('educational_field') ? localStorage.getItem('educational_field') : '';
+        },
+        stored_educational_level(){
+            return localStorage.getItem('educational_level') ? localStorage.getItem('educational_level') : '';
+        },
+        stored_student_number(){
+            return localStorage.getItem('student_number') ? localStorage.getItem('student_number') : '';
+        },
+        stored_skills(){
+            return localStorage.getItem('skills') ? localStorage.getItem('skills') : '';
+        },
+        stored_activities(){
+            return localStorage.getItem('activities') ? localStorage.getItem('activities') : '';
+        }
+    },
+
+    mounted(){
+        this.educational_field = this.stored_educational_field;
+        this.educational_level = this.stored_educational_level;
+        this.student_number = this.stored_student_number;
+        this.skills = this.stored_skills;
+        this.activities = this.stored_activities;
     }
 }
 </script>

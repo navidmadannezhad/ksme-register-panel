@@ -7,46 +7,28 @@ export const state = {
     level4Lock: true,
 
     isLoading: false,
-
-    first_name: '',
-    last_name: '',
-    birthday: '',
-    email: '',
-    national_number: '',
-    phone_number: '',
-    educational_field: '',
-    educational_level: '',
-    student_number: '',
-    skills: '',
-    activities: '',
-    extra_words: '',
-    corporate_field:''
 }
 
 export const mutations = {
-    renewParameter(state, args){
-        eval(`state.${args.paramName} = "${args.newValue}"`);
-    },
-    
     openLockOfLevel(state, args){
         eval(`state.level${args.num}Lock = false`);
     },
 
     changeLoadingState(state){
         state.isLoading = !state.isLoading;
-    }
+    },
 }
 
 export const actions = {
 
     validateLevel1({commit, state}){
         let args = {
-            first_name: state.first_name,
-            last_name: state.last_name,
-            birthday: state.birthday,
-            email: state.email,
-            national_number: state.national_number,
-            phone_number: state.phone_number
+            first_name: localStorage.getItem('first_name'),
+            last_name: localStorage.getItem('last_name'),
+            birthday: localStorage.getItem('birthday'),
+            email: localStorage.getItem('email'),
+            national_number: localStorage.getItem('national_number'),
+            phone_number: localStorage.getItem('phone_number')
         };
 
         return level1Request(args);
@@ -54,11 +36,11 @@ export const actions = {
 
     validateLevel2({commit, state}){
         let args = {
-            educational_field: state.educational_field,
-            educational_level: state.educational_level,
-            student_number: state.student_number,
-            skills: state.skills,
-            activities: state.activities
+            educational_field: localStorage.getItem('educational_field'),
+            educational_level: localStorage.getItem('educational_level'),
+            student_number: localStorage.getItem('student_number'),
+            skills: localStorage.getItem('skills'),
+            activities: localStorage.getItem('activities')
         }
 
         return level2Request(args);
@@ -66,22 +48,38 @@ export const actions = {
 
     validateLevel3({commit, state}){
         let args = {
-            first_name: state.first_name,
-            last_name: state.last_name,
-            birthday: state.birthday,
-            email: state.email,
-            national_number: state.national_number,
-            phone_number: state.phone_number,
-            educational_field: state.educational_field,
-            educational_level: state.educational_level,
-            student_number: state.student_number,
-            skills: state.skills,
-            activities: state.activities,
-            corporate_field: state.corporate_field,
-            extra_words: state.extra_words
+            first_name: localStorage.getItem('first_name'),
+            last_name: localStorage.getItem('last_name'),
+            birthday: localStorage.getItem('birthday'),
+            email: localStorage.getItem('email'),
+            national_number: localStorage.getItem('national_number'),
+            phone_number: localStorage.getItem('phone_number'),
+            educational_field: localStorage.getItem('educational_field'),
+            educational_level: localStorage.getItem('educational_level'),
+            student_number: localStorage.getItem('student_number'),
+            skills: localStorage.getItem('skills'),
+            activities: localStorage.getItem('activities'),
+            corporate_field: localStorage.getItem('corporate_field'),
+            extra_words: localStorage.getItem('extra_words')
         }
 
         return level3Request(args);
     },
+
+    deleteLocalStorageItems({commit, state}){
+        localStorage.removeItem('first_name');
+        localStorage.removeItem('last_name');
+        localStorage.removeItem('birthday');
+        localStorage.removeItem('phone_number');
+        localStorage.removeItem('student_number');
+        localStorage.removeItem('national_number');
+        localStorage.removeItem('skills');
+        localStorage.removeItem('activities');
+        localStorage.removeItem('corporate_field');
+        localStorage.removeItem('educational_field');
+        localStorage.removeItem('educational_level');
+        localStorage.removeItem('extra_words');
+        localStorage.removeItem('email');
+    }
 
 }

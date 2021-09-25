@@ -146,6 +146,9 @@ div.level1 div.form button.next_level {
   color: #1b1b1b;
   font-size: 0.7rem;
   width: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.3;
+  transition: all 0.3;
 }
 
 div.level1 div.form button.next_level::-webkit-input-placeholder {
@@ -259,6 +262,9 @@ div.level2 div.form button.next_level {
   color: #1b1b1b;
   font-size: 0.7rem;
   width: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.3;
+  transition: all 0.3;
 }
 
 div.level2 div.form button.next_level::-webkit-input-placeholder {
@@ -369,6 +375,9 @@ div.level3 div.form button.next_level {
   color: #1b1b1b;
   font-size: 0.7rem;
   width: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.3;
+  transition: all 0.3;
 }
 
 div.level3 div.form button.next_level::-webkit-input-placeholder {
