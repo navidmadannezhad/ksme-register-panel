@@ -2,9 +2,10 @@ div.level1{
 
     div.form{
         width: 100%;
-        div{
+        div.input{
             margin-top: 10px;
         }
+        
         input{
             @include input();
             width: 100%;

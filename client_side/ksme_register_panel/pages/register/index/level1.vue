@@ -1,27 +1,27 @@
 <template>
     <div class="level1">
         <div class="form">
-            <div class="name">
+            <div class="name input">
                 <input type="text" v-model="first_name" placeholder="نام">
             </div>
-            <div class="fathers_name">
+            <div class="fathers_name input">
                 <input type="text" v-model="last_name" placeholder="نام خانوادگی">
             </div>
-            <div class="birthday">
+            <div class="birthday input">
                 <p class="intro">تاریخ تولد</p>
-                <date-picker id="date-picker" v-model="birthday"></date-picker>
+                <date-picker id="date-picker" v-model="birthday" />
             </div>
-            <div class="national_number">
+            <div class="national_number input">
                 <input type="text" placeholder="کد ملی/ شماره شناسنامه" v-model="national_number">
             </div>
-            <div class="phone_number">
+            <div class="phone_number input">
                 <input type="text" placeholder="شماره تلفن همراه" v-model="phone_number">
             </div>
-            <div class="email">
+            <div class="email input">
                 <input type="text" placeholder="ایمیل" v-model="email">
             </div>
 
-            <div class="next_level">
+            <div class="next_level input">
                 <button class="next_level" @click="validateLevel1">مرحله بعد</button>
                 <!-- <NuxtLink class="next_level" tag="button" to='/level2'>مرحله بعد</NuxtLink> -->
             </div>
