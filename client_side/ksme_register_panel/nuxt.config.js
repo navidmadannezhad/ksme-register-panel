@@ -1,4 +1,5 @@
 export default {
+  target: 'server',
   env:{
     level1_url: 'http://127.0.0.1:8000/api/level1/',
     level2_url: 'http://127.0.0.1:8000/api/level2/',
@@ -46,7 +47,14 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+
   ],
+
+  fontawesome: {
+    icons: [
+      
+    ]
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

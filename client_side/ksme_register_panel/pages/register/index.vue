@@ -64,10 +64,12 @@ export default{
         })
       },
 
-      goToLevel(num, nextRoute){
+      goToLevel(num){
+          console.log(this.$route.path);
           document.querySelector('.level-message p.msg').innerHTML = eval(`this.level${num}`).message;
           this.removeLoaderClasses();
           document.querySelector('#loader-itself').classList.add(eval(`this.level${num}`).class);   
+          console.log(eval(`this.level${num}`).class);
       },
 
       LevelIsLocked(num){
@@ -88,7 +90,7 @@ export default{
       loaderState(){
         switch(this.$route.path){
 
-            case '/register/level1':
+            case  '/register/level1':
               return this.level1;
               break;
 
@@ -102,6 +104,10 @@ export default{
 
             case '/register/level4':
               return this.level4;
+              break;
+
+            default:
+              return this.level1;
               break;
           }
       }
