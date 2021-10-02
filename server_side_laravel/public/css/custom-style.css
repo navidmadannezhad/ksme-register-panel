@@ -1,0 +1,206 @@
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/fonts/Vazir.eot');
+    src: url('../fonts/fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fonts/Vazir.woff2') format('woff2'),
+    url('../fonts/fonts/Vazir.woff') format('woff'),
+    url('../fonts/fonts/Vazir.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/fonts/Vazir-Bold.eot');
+    src: url('../fonts/fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fonts/Vazir-Bold.woff2') format('woff2'),
+    url('../fonts/fonts/Vazir-Bold.woff') format('woff'),
+    url('../fonts/fonts/Vazir-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/fonts/Vazir-Light.eot');
+    src: url('../fonts/fonts/Vazir-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fonts/Vazir-Light.woff2') format('woff2'),
+    url('../fonts/fonts/Vazir-Light.woff') format('woff'),
+    url('../fonts/fonts/Vazir-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/fonts/Vazir-Medium.eot');
+    src: url('../fonts/fonts/Vazir-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fonts/Vazir-Medium.woff2') format('woff2'),
+    url('../fonts/fonts/Vazir-Medium.woff') format('woff'),
+    url('../fonts/fonts/Vazir-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/fonts/Vazir-Thin.eot');
+    src: url('../fonts/fonts/Vazir-Thin.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fonts/Vazir-Thin.woff2') format('woff2'),
+    url('../fonts/fonts/Vazir-Thin.woff') format('woff'),
+    url('../fonts/fonts/Vazir-Thin.ttf') format('truetype');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/fonts/Vazir-Black.eot');
+    src: url('../fonts/fonts/Vazir-Black.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fonts/Vazir-Black.woff2') format('woff2'),
+    url('../fonts/fonts/Vazir-Black.woff') format('woff'),
+    url('../fonts/fonts/Vazir-Black.ttf') format('truetype');
+    font-weight: 900;
+}
+
+/*---------------------------------- End of fonts ---------------------------------- */
+
+body {
+    font-family: 'Vazir', sans-serif !important;
+}
+
+.ltr {
+    direction:ltr;
+}
+
+
+ul {
+    padding-inline-start: 0px;
+}
+
+/* sidebar */
+
+.sidebar {
+    direction: ltr;
+}
+
+.sidebar > div:first-child {
+    direction: rtl;
+}
+
+.control-sidebar, .control-sidebar:before {
+    left: -250px;
+    right: auto;
+    transition: left .3s ease-in-out;
+}
+
+.control-sidebar-slide-open .control-sidebar, .control-sidebar-slide-open .control-sidebar:before {
+    left: 0;
+    right: auto;
+}
+
+.small-box .icon {
+    right:auto;
+    left:10px;
+}
+
+.nav-sidebar .nav-link>p>.right {
+    left: 1rem;
+    right: auto;
+}
+
+.nav-sidebar>.nav-item .nav-icon {
+    margin-right: 0;
+    margin-left: .2rem;
+}
+
+@media (min-width: 992px) {
+    .sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .main-footer, .sidebar-mini.sidebar-collapse .main-header {
+        margin-right: 4.6rem;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .main-footer, .sidebar-mini.sidebar-collapse .main-header {
+        margin-left: 0rem !important;
+        margin-right: 4.6rem !important;
+        z-index:100;
+    }
+
+    .sidebar-mini.sidebar-collapse .main-sidebar, .sidebar-mini.sidebar-collapse .main-sidebar:before {
+        margin-right: 0;
+        width: 4.6rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .content-wrapper, .main-footer, .main-header {
+        transition: margin-right .3s ease-in-out;
+        margin-right: 250px;
+        margin-left : 0;
+        z-index: 3000;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .main-sidebar, .main-sidebar:before {
+        box-shadow: none!important;
+        margin-right: -250px;
+        margin-left: 0;
+    }
+
+    .content-wrapper, .content-wrapper:before, .main-footer, .main-footer:before, .main-header, .main-header:before {
+        margin-right: 0;
+    }
+
+    .sidebar-open .main-sidebar, .sidebar-open .main-sidebar:before {
+        margin-right: 0;
+        z-index: 4000;
+    }
+}
+
+.sidebar-collapse .main-sidebar, .sidebar-collapse .main-sidebar:before {
+    margin-right: -250px;
+}
+
+.main-sidebar {
+    left: auto;
+    right:0;
+}
+
+
+/* --------------------- Users ---------------------- */
+div.content-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+div.users{
+    width: 80%;
+    margin-top: 100px;
+}
+
+div.users div.user{
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    margin-top: 10px;
+
+    border-right: 3px solid rgb(199, 39, 39);
+}
+
+div.users div.user p{
+    margin: 0px;
+    padding: 0px;
+    padding: 20px;
+}
+
+div.users div.user a{
+    padding: 20px;
+    background-color: rgb(15, 134, 15);
+    color: white;
+    border-radius: 5px;
+}

@@ -65,11 +65,9 @@ export default{
       },
 
       goToLevel(num){
-          console.log(this.$route.path);
           document.querySelector('.level-message p.msg').innerHTML = eval(`this.level${num}`).message;
           this.removeLoaderClasses();
           document.querySelector('#loader-itself').classList.add(eval(`this.level${num}`).class);   
-          console.log(eval(`this.level${num}`).class);
       },
 
       LevelIsLocked(num){

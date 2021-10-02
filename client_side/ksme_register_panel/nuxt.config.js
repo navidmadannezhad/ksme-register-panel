@@ -1,9 +1,37 @@
+var fs = require('fs');
+var path = require('path');
+
+let ENV_DEV = true;
+
+//Development Environment
+let port = 3000;
+let host = 'localhost';
+let https = false;
+
+//Production Environment
+if(ENV_DEV==false)
+{
+  port = 45782; // make sure this port is open on your server you can do that via WHM or talk to you hosting company
+  host = 'ksme.ir';
+  https =  {
+    key: fs.readFileSync(path.resolve(__dirname,
+        './../../navidmnz/ssl/keys/dd156_67297_b3693d761c82fac1ce86b1823455242b.key')),
+    cert: fs.readFileSync(path.resolve(__dirname,
+        './../../navidmnz/ssl/certs/navidmnzh_ir_dd156_67297_1633038472_da5744c3dbb73989ba8e979544b8b49a.crt'))
+  };
+}
+
 export default {
-  target: 'server',
   env:{
-    level1_url: 'http://127.0.0.1:8000/api/level1/',
-    level2_url: 'http://127.0.0.1:8000/api/level2/',
-    level3_url: 'http://127.0.0.1:8000/api/level3/',
+    level1_url: 'https://ksme.ir/api/level1',
+    level2_url: 'https://ksme.ir/api/level2',
+    level3_url: 'https://ksme.ir/api/level3',
+  },
+  server: {
+    port: port, 
+    host: host, 
+    timing: false,
+    https: https
   },
   router:{
     //base: '/navid/'

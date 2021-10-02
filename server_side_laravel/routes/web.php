@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/admin/{id}', [App\Http\Controllers\HomeController::class, 'userDetails'])->name('userDetail');
 
 // email verification route
 Route::get('account/verify/{token}', 'TokenController@verifyAccount')->name('userVerify'); 

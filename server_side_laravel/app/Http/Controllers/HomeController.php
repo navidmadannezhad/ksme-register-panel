@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $users = User::all();
+        return view('home')->with(['users' => $users]);
+    }
+
+    public function userDetails($id){
+        $user = User::where('id', $id)->first();
+        return view('userDetail')->with(['user' => $user]);
     }
 }

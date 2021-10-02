@@ -56,17 +56,19 @@ div.error-comp{
     top: 0px;
     transform: translateX(120vw);
     transition: all 0.5s;
-    div.errors{
-        width: 100%;
-        div.error{
-            background-color: rgba(255, 79, 79, 0.5);
-            color: white;
-            font-size: $font2;
-            padding: 5px;
-            text-align: center;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-    }
+}
+
+div.error-comp div.errors{
+    width: 100%;
+}
+
+div.error-comp div.errors div.error{
+    background-color: rgba(255, 79, 79, 0.5);
+    color: white;
+    font-size: $font2;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 </style>
